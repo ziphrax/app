@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <form mehtod="get" action="post">
+        <div>
+            <p>Allergens</p>
+            <label>Beans <input type="checkbox" name="allergens" value="beans" /></label>
+            <label>Toast <input type="checkbox" name="allergens" value="toast" /></label>
+            <label>Butter <input type="checkbox" name="allergens" value="butter" /></label>
+            <label>Prawns <input type="checkbox" name="allergens" value="prawns" /></label>
+            <label>Mayo <input type="checkbox" name="allergens" value="mayonaise" /></label>
+        </div>
+        <br />
+        <button type="submit">Search</button>
+    </form>
+
+    <ul class="results"></ul>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script>
+        $('form button').on('click', function (e) {
+            e.preventDefault()
+            var allergens = $('form input[name="allergens"]:checked')
+                .map(function () {
+                    return $(this).val();
+                })
+                .get()
+                .join();            
+            $.get('/menu?allergens=' + allergens)
+                .done(function (data) {
+                    var html = '';
+                    $.each(data, function (index, obj) {
+                        html += '<li>' + obj.name + ' ( £ ' + obj.price + ' ) :- ' + obj.description + '</li>';
+                    });
+                    $('.results').html(html);
+                });
+        });
+    </script>
+
+</body>
+</html>

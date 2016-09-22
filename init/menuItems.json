@@ -1,0 +1,20 @@
+﻿{
+  "menu": [
+    {
+      "name": "Beans on Toast",
+      "create_url": "http://127.0.0.1:3000/menuItem/new?name=Beans on Toast&description=Its beans on toast&price=2.49&ingredients=beans,toast,butter&status=available"
+    },
+    {
+      "name": "Eggy Bread",
+      "create_url": "http://127.0.0.1:3000/menuItem/new?name=Eggy Bread&description=Its toast fried in egg&price=2.99&ingredients=egg,toast,butter&status=available"
+    },
+    {
+      "name": "Prawn Breakfast",
+      "create_url": "http://127.0.0.1:3000/menuItem/new?name=Prawn Breakfast&description=Prawns for breakfast&price=4.99&ingredients=prawns,mayonaise&status=available"
+    },
+    {
+      "name": "Not Available",
+      "create_url": "http://127.0.0.1:3000/menuItem/new?name=Not Available&description=Not Available&price=0.99&ingredients=&status=not available"
+    }
+  ]
+}
