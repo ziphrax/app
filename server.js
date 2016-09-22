@@ -3,7 +3,7 @@
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     menuItem = require('./models/menuItem'),
-    port = 80;
+    port = 8080;
 
 
     mongoose.connect('mongodb://localhost/seeiftsticks');
